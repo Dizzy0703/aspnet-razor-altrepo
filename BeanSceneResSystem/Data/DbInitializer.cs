@@ -23,7 +23,8 @@ namespace BeanSceneResSystem.Data
             var reservations = new Reservation[]
             {
                 new Reservation { UserID = 1, Area = 'O', Date = DateTime.Today, Start = DateTime.Now, Duration = 60, NumOfGuests = 1, Source = "in-person", Sitting = 'B', TableNo = 1, Notes = "Under cover if possible" },
-                new Reservation { UserID = 1, Area = 'O', Date = DateTime.Today, Start = DateTime.Now, Duration = 60, NumOfGuests = 1, Source = "email", Sitting = 'L', TableNo = 1, Notes = "Under cover if possible" }
+                new Reservation { UserID = 1, Area = 'O', Date = DateTime.Today, Start = DateTime.Now, Duration = 60, NumOfGuests = 1, Source = "email", Sitting = 'L', TableNo = 1, Notes = "Under cover if possible" },
+                new Reservation { UserID = 1, Area = 'M', Date = DateTime.Today, Start = DateTime.Now, Duration = 60, NumOfGuests = 1, Source = "email", Sitting = 'D', TableNo = 1, Notes = "Away from other guest" }
             };
 
             context.Reservations.AddRange(reservations);

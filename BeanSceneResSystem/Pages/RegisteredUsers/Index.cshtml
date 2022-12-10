@@ -1,0 +1,42 @@
+﻿@page
+@model BeanSceneResSystem.Pages.RegisteredUsers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Registered Users</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegisteredUser[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegisteredUser[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RegisteredUser) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.UserName">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.UserName">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.UserName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
