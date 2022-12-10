@@ -2,6 +2,9 @@
 
 namespace BeanSceneResSystem.Models
 {
+    /// <summary>
+    /// Represents a login-able user (Bean Scene staff).
+    /// </summary>
     public class RegisteredUser
     {
         [Key]

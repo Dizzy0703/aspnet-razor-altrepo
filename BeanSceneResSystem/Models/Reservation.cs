@@ -2,6 +2,10 @@
 
 namespace BeanSceneResSystem.Models
 {
+    /// <summary>
+    /// Represents a reservation object, linked to the User object with a foreign key 
+    /// relationship.
+    /// </summary>
     public class Reservation
     {
         public int ReservationID { get; set; }

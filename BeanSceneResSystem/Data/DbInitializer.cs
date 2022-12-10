@@ -4,6 +4,14 @@ namespace BeanSceneResSystem.Data
 {
     public class DbInitializer
     {
+        /// <summary>
+        /// When called with the BeanSceneResSystemContext, checks to see if the database 
+        /// contains any data in the User table. If there is none, it creates users, reservations 
+        /// and a registered user login account with username "johns" and password "hello_js#7". 
+        /// WARNING: when moving to production, REMOVE any calls to this function, as they represent 
+        /// a security risk.
+        /// </summary>
+        /// <param name="context">The database context to use. Must be the current project to work.</param>
         public static void Initialize(BeanSceneResSystemContext context)
         {
             if (context.Users.Any())
@@ -32,8 +40,7 @@ namespace BeanSceneResSystem.Data
 
             var registeredUsers = new RegisteredUser[]
             {
-                new RegisteredUser { UserName = "johns", Password = "hello_js#7"},
-                new RegisteredUser { UserName = "joeb", Password = "hello_jb#1"}
+                new RegisteredUser { UserName = "johns", Password = "hello_js#7"}
             };
 
             context.RegisteredUsers.AddRange(registeredUsers);

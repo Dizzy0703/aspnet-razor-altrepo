@@ -1,5 +1,9 @@
 ﻿namespace BeanSceneResSystem.Models
 {
+    /// <summary>
+    /// Represents a Member/Guest, which is linked to the Reservation object 
+    /// if there are any reservations with the correct UserID.
+    /// </summary>
     public class User
     {
         public int ID { get; set; }
