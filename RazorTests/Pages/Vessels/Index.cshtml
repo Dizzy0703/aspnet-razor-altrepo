@@ -1,0 +1,60 @@
+﻿@page
+@model RazorTests.Pages.Vessels.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vessel[0].COSPARID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vessel[0].LaunchDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vessel[0].Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vessel[0].IntendedTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vessel[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vessel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.COSPARID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaunchDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntendedTarget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,96 @@
+﻿@page
+@model BeanSceneReservationSystem.Pages.Reservations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Sitting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_NumOfGuests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_TableNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Reservation_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].User.User_Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Reservation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Sitting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_NumOfGuests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_TableNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.User_Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,79 @@
+﻿@page
+@model BeanSceneReservationSystem.Pages.Reservations.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Reservation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Sitting" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Sitting" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Sitting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Date" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Date" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Start" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Start" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Duration" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Duration" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_NumOfGuests" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_NumOfGuests" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_NumOfGuests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Area" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Area" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_TableNo" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_TableNo" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_TableNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Source" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Source" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Source" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Notes" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Notes" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.Reservation_Status" class="control-label"></label>
+                <input asp-for="Reservation.Reservation_Status" class="form-control" />
+                <span asp-validation-for="Reservation.Reservation_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

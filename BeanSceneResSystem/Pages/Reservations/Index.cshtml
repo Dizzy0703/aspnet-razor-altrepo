@@ -1,0 +1,90 @@
+﻿@page
+@model BeanSceneResSystem.Pages.Reservations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Reservations</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Sitting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].NumOfGuests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].TableNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Reservation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sitting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfGuests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TableNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ReservationID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ReservationID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ReservationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

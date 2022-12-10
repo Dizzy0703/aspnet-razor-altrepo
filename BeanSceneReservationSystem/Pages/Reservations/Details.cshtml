@@ -1,0 +1,79 @@
+﻿@page
+@model BeanSceneReservationSystem.Pages.Reservations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Sitting)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Sitting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Start)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Start)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_NumOfGuests)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_NumOfGuests)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Area)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Area)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_TableNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_TableNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Source)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Source)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.Reservation_Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reservation.Reservation_Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Reservation?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
